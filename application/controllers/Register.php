@@ -24,7 +24,7 @@ class Register extends CI_Controller
 		$id_user = md5($username.$email.$password.rand(1,99999));
 
 		if($password == $re_password){
-			$hasil = $this->m_user->insert_user($id_user, $email, $password, $id_user_level);
+			$hasil = $this->m_user->insert_user($id_user, $username, $email, $password, $id_user_level);
 
         if ($hasil == false) {
 

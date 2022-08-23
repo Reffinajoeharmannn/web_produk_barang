@@ -2,7 +2,7 @@
 
 class M_user extends CI_Model
 {
-	public function insert_user($id_user, $email, $password, $id_user_level)
+	public function insert_user($id_user, $username, $email, $password, $id_user_level)
 	
 	{
 		$this->db->trans_start();
@@ -16,5 +16,12 @@ class M_user extends CI_Model
 		} else {
 			return false;
 		}
+	}
+
+	public function cek_login($username)
+
+	{
+	$hasil = $this->db->query("SELECT * FROM user WHERE username='$username'");
+		return $hasil;
 	}
 }
